@@ -1,1 +1,1 @@
-let name: string = 'clare';
+let name: string = 'clare-lindley';
