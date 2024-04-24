@@ -11,6 +11,12 @@ const requestList = new Map()
  * what if we can't find the request id in the list of requests?
  */
 
+app.get("/test", (req, res) => {
+    res.send({})
+   res.status(200)
+});
+
+
 app.post("/incoming", (req, res) => {
     const body = req.body
     const requestId = Math.ceil(Math.random(0,1) * 10000).toString();
@@ -29,6 +35,7 @@ app.post("/outgoing", (req, res) => {
     const chatGPTResponse = requestList.get(requestId)
     chatGPTResponse.send({score: '100%'});
     res.status(200)
+    res.send({})
     requestList.delete(requestId)
 })
 
