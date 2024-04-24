@@ -11,9 +11,9 @@ const requestList = new Map()
  * what if we can't find the request id in the list of requests?
  */
 
-app.get("/test", (req, res) => {
+app.get("/test", (_, res) => {
+    res.status(200)
     res.send({})
-   res.status(200)
 });
 
 
